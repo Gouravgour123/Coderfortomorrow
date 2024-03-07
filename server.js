@@ -1,11 +1,11 @@
-const express = require('express')
+const express = require('express');
+const { userRoutes } = require('./Routers/routes');
 const app = express();
-require('./mongoose')
+require('./DbConnection/mongoose')
 const PORT = 4400;
 app.use(express.json());
 
-
-app.use("/home",)
+app.use("/home",userRoutes)
 
 app.listen(PORT, ()=>{
     console.log(`server is running at ${PORT}`)
